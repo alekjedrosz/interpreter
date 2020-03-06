@@ -1,0 +1,49 @@
+S' -> program
+program -> instr
+instr -> instr SEMI simple_instr
+instr -> simple_instr
+simple_instr -> assign_stmt
+simple_instr -> if_stmt
+simple_instr -> while_stmt
+simple_instr -> output_stmt
+simple_instr -> EXIT
+simple_instr -> BEGIN instr END
+assign_stmt -> IDENT ASSIGN expr
+expr -> num_expr
+expr -> str_expr
+expr -> IDENT
+num_expr -> NUM
+num_expr -> READINT
+num_expr -> MINUS expr
+num_expr -> expr PLUS expr
+num_expr -> expr MINUS expr
+num_expr -> expr TIMES expr
+num_expr -> expr DIVIDE expr
+num_expr -> expr MOD expr
+num_expr -> LPAREN expr RPAREN
+num_expr -> LEN LPAREN expr RPAREN
+num_expr -> POS LPAREN expr COMMA expr RPAREN
+str_expr -> STRING
+str_expr -> READSTR
+str_expr -> CONCAT LPAREN expr COMMA expr RPAREN
+str_expr -> SUBSTR LPAREN expr COMMA expr COMMA expr RPAREN
+if_stmt -> IF bool_expr THEN simple_instr
+if_stmt -> IF bool_expr THEN simple_instr ELSE simple_instr
+while_stmt -> WHILE bool_expr DO simple_instr
+while_stmt -> DO simple_instr WHILE bool_expr
+bool_expr -> BOOL
+bool_expr -> LPAREN bool_expr RPAREN
+bool_expr -> NOT bool_expr
+bool_expr -> bool_expr AND bool_expr
+bool_expr -> bool_expr OR bool_expr
+bool_expr -> expr num_rel expr
+bool_expr -> expr str_rel expr
+num_rel -> EQUALS
+num_rel -> LT
+num_rel -> LE
+num_rel -> GT
+num_rel -> GE
+num_rel -> NE
+str_rel -> STREQ
+str_rel -> STRNOTEQ
+output_stmt -> PRINT LPAREN expr RPAREN

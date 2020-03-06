@@ -1,0 +1,2 @@
+y := "test";
+print(y/2)

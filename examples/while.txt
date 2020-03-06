@@ -1,0 +1,12 @@
+x := 0;
+while x < 3 do
+begin 
+x := x + 1;
+print(x)
+end;
+do
+begin 
+print("print_stmt");
+x := x-1
+end
+while x > 0

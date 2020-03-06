@@ -1,0 +1,8 @@
+if 2  <= 5 and 3 > 2 and "test1" != "test2" then
+begin
+if true or false then print("true");
+x := 2;
+print(x)
+end;
+if x = 2 then
+print("true")
